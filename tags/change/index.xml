@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Change on Prajwal S</title>
-    <link>http://localhost:1313/tags/change/</link>
+    <link>http://prajwals.in/tags/change/</link>
     <description>Recent content in Change on Prajwal S</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 30 Jun 2024 12:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/change/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://prajwals.in/tags/change/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Init</title>
-      <link>http://localhost:1313/posts/init/</link>
+      <link>http://prajwals.in/posts/init/</link>
       <pubDate>Sun, 30 Jun 2024 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/init/</guid>
+      <guid>http://prajwals.in/posts/init/</guid>
       <description>The re-ignition of the idea</description>
     </item>
   </channel>
