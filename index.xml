@@ -6,22 +6,29 @@
     <description>Recent content on Prajwal S</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jun 2024 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 May 2023 03:55:20 +0530</lastBuildDate>
     <atom:link href="http://prajwals.in/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Init</title>
-      <link>http://prajwals.in/posts/init/</link>
-      <pubDate>Sun, 30 Jun 2024 12:00:00 +0000</pubDate>
-      <guid>http://prajwals.in/posts/init/</guid>
-      <description>The re-ignition of the idea</description>
+      <title>Zero to One</title>
+      <link>http://prajwals.in/posts/zero-to-one/</link>
+      <pubDate>Fri, 05 May 2023 03:55:20 +0530</pubDate>
+      <guid>http://prajwals.in/posts/zero-to-one/</guid>
+      <description>Book summary</description>
     </item>
     <item>
       <title>About</title>
       <link>http://prajwals.in/about/</link>
       <pubDate>Wed, 21 Jul 2021 12:00:00 +0000</pubDate>
       <guid>http://prajwals.in/about/</guid>
-      <description>Welcome to my space! I am Prajwal S. Hopefully, I&amp;rsquo;ll tell you more about myself someday. You can find me on:
+      <description>Welcome to my space! I am Prajwal S, engineer, software developer. Hopefully, I&amp;rsquo;ll tell you more about myself someday. You can find me on:
 GitHub X(Twitter) LinkedIn Facebook Instagram Instagram - photonstruck [Email](mailto:prajwalsandinje at gmail dot com) Feel free to reach out or connect with me on any of these platforms.</description>
+    </item>
+    <item>
+      <title>Init</title>
+      <link>http://prajwals.in/posts/init/</link>
+      <pubDate>Tue, 12 Jan 2021 12:00:00 +0000</pubDate>
+      <guid>http://prajwals.in/posts/init/</guid>
+      <description>The re-ignition of the idea</description>
     </item>
   </channel>
 </rss>

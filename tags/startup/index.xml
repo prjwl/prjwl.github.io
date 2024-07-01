@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Prajwal S</title>
-    <link>http://prajwals.in/posts/</link>
-    <description>Recent content in Posts on Prajwal S</description>
+    <title>Startup on Prajwal S</title>
+    <link>http://prajwals.in/tags/startup/</link>
+    <description>Recent content in Startup on Prajwal S</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 05 May 2023 03:55:20 +0530</lastBuildDate>
-    <atom:link href="http://prajwals.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://prajwals.in/tags/startup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zero to One</title>
       <link>http://prajwals.in/posts/zero-to-one/</link>
       <pubDate>Fri, 05 May 2023 03:55:20 +0530</pubDate>
       <guid>http://prajwals.in/posts/zero-to-one/</guid>
       <description>Book summary</description>
-    </item>
-    <item>
-      <title>Init</title>
-      <link>http://prajwals.in/posts/init/</link>
-      <pubDate>Tue, 12 Jan 2021 12:00:00 +0000</pubDate>
-      <guid>http://prajwals.in/posts/init/</guid>
-      <description>The re-ignition of the idea</description>
     </item>
   </channel>
 </rss>

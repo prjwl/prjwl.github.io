@@ -6,12 +6,19 @@
     <description>Recent content in Change on Prajwal S</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jun 2024 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 May 2023 03:55:20 +0530</lastBuildDate>
     <atom:link href="http://prajwals.in/tags/change/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zero to One</title>
+      <link>http://prajwals.in/posts/zero-to-one/</link>
+      <pubDate>Fri, 05 May 2023 03:55:20 +0530</pubDate>
+      <guid>http://prajwals.in/posts/zero-to-one/</guid>
+      <description>Book summary</description>
+    </item>
     <item>
       <title>Init</title>
       <link>http://prajwals.in/posts/init/</link>
-      <pubDate>Sun, 30 Jun 2024 12:00:00 +0000</pubDate>
+      <pubDate>Tue, 12 Jan 2021 12:00:00 +0000</pubDate>
       <guid>http://prajwals.in/posts/init/</guid>
       <description>The re-ignition of the idea</description>
     </item>
