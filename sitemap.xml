@@ -29,6 +29,18 @@
     <loc>http://prajwals.in/posts/zero-to-one/</loc>
     <lastmod>2023-05-05T03:55:20+05:30</lastmod>
   </url><url>
+    <loc>http://prajwals.in/posts/rest-api/</loc>
+    <lastmod>2022-10-23T03:55:20+05:30</lastmod>
+  </url><url>
+    <loc>http://prajwals.in/tags/rest-api/</loc>
+    <lastmod>2022-10-23T03:55:20+05:30</lastmod>
+  </url><url>
+    <loc>http://prajwals.in/tags/tech/</loc>
+    <lastmod>2022-10-23T03:55:20+05:30</lastmod>
+  </url><url>
+    <loc>http://prajwals.in/categories/tech/</loc>
+    <lastmod>2022-10-23T03:55:20+05:30</lastmod>
+  </url><url>
     <loc>http://prajwals.in/about/</loc>
     <lastmod>2021-07-21T12:00:00+00:00</lastmod>
   </url><url>
@@ -40,6 +52,8 @@
   </url><url>
     <loc>http://prajwals.in/categories/life/</loc>
     <lastmod>2021-01-12T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://prajwals.in/posts/celery/</loc>
   </url><url>
     <loc>http://prajwals.in/search/</loc>
   </url>
