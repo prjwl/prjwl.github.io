@@ -6,44 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cea2b6a1-6977-4447-b68a-47f6f291bc6a" name="Changes" comment="Migrating">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/search.40bc872e663a93629c28470a60af5070cb451de1a65f242264488d087eabd131.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/life/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/life/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/life/page/1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/startup/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/startup/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/startup/page/1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/init/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/page/1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/zero-to-one/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/search/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/books/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/books/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/books/page/1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/change/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/change/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/change/page/1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/life/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/life/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/life/page/1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/startup/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/startup/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags/startup/page/1/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +152,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719926995124</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Migrating">
+      <option name="closed" value="true" />
+      <created>1719938183218</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719938183218</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Migrating">
+      <option name="closed" value="true" />
+      <created>1719938204443</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719938204443</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
