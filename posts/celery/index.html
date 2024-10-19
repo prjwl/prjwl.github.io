@@ -7,8 +7,8 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Celery | The space</title>
 <meta name="keywords" content="tech, celery">
-<meta name="description" content="Celery is a task queue. It allows us to run tasks asynchronously from Python web applications outside the HTTP request-response cycle. That means if there is a task that will take some time to complete and you don’t want to wait until the completion of the task to respond to the client then we can run such tasks asynchronously by running in the background using celery.
-This involves two main components celery and a message broker:">
+<meta name="description" content="What is celery?: Celery is a task queue. It allows us to run tasks asynchronously from Python web applications outside the HTTP request-response cycle. That means if there is a task that will take some time to complete and you don’t want to wait until the completion of the task to respond to the client then we can run such tasks asynchronously by running in the background using celery.
+Components: Producer: For example, the Django application can be a producer.">
 <meta name="author" content="Prajwal S">
 <link rel="canonical" href="http://localhost:1313/posts/celery/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
@@ -120,120 +120,59 @@ This involves two main components celery and a message broker:">
     <h1 class="post-title entry-hint-parent">
       Celery
     </h1>
-    <div class="post-meta"><span title='2022-11-22 03:55:20 +0530 IST'>November 22, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Prajwal S
+    <div class="post-meta"><span title='2022-11-22 03:55:20 +0530 IST'>November 22, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Prajwal S
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
-  <div class="post-content"><p>Celery is a task queue. It allows us to run tasks asynchronously from Python web applications outside the HTTP request-response cycle. That means if there is a task that will take some time to complete and you don’t want to wait until the completion of the task to respond to the client then we can run such tasks asynchronously by running in the background using celery.</p>
-<p>This involves two main components celery and a message broker:</p>
-<p>Producer:
-In our case, the Django application is the producer. Whenever the Django application calls a task with a delay, the task will be picked up by the celery client and added to the queue using a message broker and gives an instant response with details related to the task.</p>
-<p>Message broker:
-A message broker is the one that stores tasks in a queue and delivers them to the consumer in our case celery worker (Ex: RabbitMQ, Redis). The overall task of the message broker in our case is picking an async task from multiple places and storing it in a queue and delivering it to the celery worker for its execution.</p>
-<p>Consumer:
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-celery" aria-label="What is celery?:">What is celery?:</a></li>
+                <li>
+                    <a href="#components" aria-label="Components:">Components:</a></li>
+                <li>
+                    <a href="#integrating-celery-with-django-and-rabbitmq" aria-label="Integrating Celery with Django and RabbitMQ:">Integrating Celery with Django and RabbitMQ:</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h3 id="what-is-celery">What is celery?:<a hidden class="anchor" aria-hidden="true" href="#what-is-celery">#</a></h3>
+<p>Celery is a task queue. It allows us to run tasks asynchronously from Python web applications outside the HTTP request-response cycle. That means if there is a task that will take some time to complete and you don’t want to wait until the completion of the task to respond to the client then we can run such tasks asynchronously by running in the background using celery.</p>
+<h3 id="components">Components:<a hidden class="anchor" aria-hidden="true" href="#components">#</a></h3>
+<p><strong>Producer</strong>:
+For example, the Django application can be a  producer. Whenever the Django application calls a task with a delay, the task will be picked up by the celery client and added to the queue using a message broker and gives an instant response with details related to the task.</p>
+<p><strong>Message broker</strong>:
+A message broker is the one that stores tasks in a queue and delivers them to the consumer i.e in our case celery worker(Ex: RabbitMQ, Redis). The overall task of the message broker in our case is picking an async task from multiple places and storing it in a queue and delivering it to the celery worker for its execution.</p>
+<p><strong>Consumer</strong>:
 In our scenario consumer is a celery worker. Celery worker is a service that picks up tasks from the message broker queue and executes them independently. We can create single or multiple celery workers as per our requirement by passing options in command while creating the serving.</p>
+<ul>
+<li>
 <p>Now there can be two kinds of async tasks one which gets triggered while the user makes a request from the application and another is triggered periodically(Just like cron jobs). This is achieved using celery beat.</p>
+</li>
+<li>
 <p>Celery workers are worker processes that run tasks independently from one another and outside the context of your main service.
 Celery beat is a scheduler that orchestrates when to run tasks. You can use it to schedule periodic tasks as well.</p>
-<p>Integrating Celery with Django and RabbitMQ:
-Install celery:
-Add the celery and django_celery_results module to INSTALLED_APPS in your Django project’ settings.py:
-Apply Django database migrations so that the necessary tables are created:
-Install RabbitMQ message broker (Alternatively Redis can be used):https://www.rabbitmq.com/download.html<br>
-Then create an instance of Celery:</p>
-<p>Create a task with @shared_task decorator: Tasks created with shared_task  decorator is auto detected by celery.
-Starting the Celery worker service:</p>
-<p>&ndash;pool option used to control the number of concurrencies <a href="https://www.distributedpython.com/2018/10/26/celery-execution-pool/">https://www.distributedpython.com/2018/10/26/celery-execution-pool/</a></p>
-<p>Install all necessary packages by running the following commands.
-sudo apt-get install wget apt-transport-https -y
-Install RabbitMQ repository signing key.
-wget -O- <a href="https://www.rabbitmq.com/rabbitmq-release-signing-key.asc">https://www.rabbitmq.com/rabbitmq-release-signing-key.asc</a> | sudo apt-key add -
-Add the RabbitMQ repository.
-echo &ldquo;deb <a href="https://dl.bintray.com/rabbitmq-erlang/debian">https://dl.bintray.com/rabbitmq-erlang/debian</a> focal erlang-22.x&rdquo; | sudo tee/etc/apt/sources.list.d/rabbitmq.list
-Install RabbitMQ Server.
-sudo apt-get install rabbitmq-server -y &ndash;fix-missing
-heck status of the RabbitMQ service.
-sudo systemctl status rabbitmq-server
-Enable rabbitmq management dashboard. (available at : http://server_ip:15672)
-sudo rabbitmq-plugins enable rabbitmq_management
-Create RabbitMq user with
-sudo rabbitmqctl add_user &lt;user_name&gt; <!-- raw HTML omitted -->
-Give administrative access to the new user:
-rabbitmqctl set_user_tags &lt;user_name&gt; administrator
-Set permission to newly created user:
-rabbitmqctl set_permissions -p / &lt;user_name&gt; &ldquo;.<em>&rdquo; &ldquo;.</em>&rdquo; &ldquo;.*&rdquo;
-For celery beat:
-celery beat is a scheduler; It kicks off tasks at regular intervals, that are then executed by available worker nodes in the cluster. For obvious reasons, only one celery beat process should be running (unlike workers, where you can run as many as you want and need).</p>
-<p>Use pip to install the package: pip install django-celery-beat
-Add the django_celery_beat module to INSTALLED_APPS in your Django project’ settings.py:
-Apply Django database migrations so that the necessary tables are created:</p>
-<p>There are two ways to run periodic tasks in celery
-Using periodic schedule setup done in settings: For example</p>
-<p>To run the celery beat service for scheduled tasks from settings:</p>
-<p>Using periodic setup done in the database:<br>
-Configurations :</p>
-<p>There are multiple configurations availble <a href="https://docs.celeryq.dev/en/stable/userguide/configuration.html">https://docs.celeryq.dev/en/stable/userguide/configuration.html</a> , Only important are mentioned here:</p>
-<p>For configuring message broker:
-CELERY_BROKER_URL: &lsquo;amqp://guest:guest@localhost:5672//&rsquo;(for RabbitMQ)
-For configuring backed result DB:
-CELERY_RESULT_BACKEND: &lsquo;django-db&rsquo; (For django db)
-For configuring time zone:
-Make sure the Django timezone and celery beat timezone are the same otherwise celery beat will not work as expected.CELERY_TIMEZONE: &lsquo;Asia/Kolkata&rsquo;
-A few things to keep in mind while working with an async task queue:
-Don&rsquo;t pass model objects to tasks. Since tasks don&rsquo;t run immediately, by the time a task runs and looks at a model object that was passed to it, the corresponding record in the database might have changed. If the task then does something to the model object and saves it, those changes in the database are overwritten by older data.</p>
-<p>It&rsquo;s almost always safer to save the object, pass the record&rsquo;s key, and look up the object again in the task:</p>
-<p>myobject.save()
-mytask.delay(myobject.pk)</p>
-<p>&hellip;</p>
-<p>@task
-def mytask(pk):
-myobject = MyModel.objects.get(pk=pk)
-Resources:</p>
-<p><a href="https://docs.celeryq.dev/en/stable/getting-started/introduction.html">https://docs.celeryq.dev/en/stable/getting-started/introduction.html</a></p>
-<p><a href="https://www.rabbitmq.com/documentation.html">https://www.rabbitmq.com/documentation.html</a></p>
-<p>For extra reading and troubleshooting:</p>
-<p><a href="https://docs.celeryq.dev/en/stable/userguide/periodic-tasks.html">https://docs.celeryq.dev/en/stable/userguide/periodic-tasks.html</a></p>
-<p><a href="https://django-celery-beat.readthedocs.io/en/latest/">https://django-celery-beat.readthedocs.io/en/latest/</a></p>
-<p><a href="https://www.distributedpython.com/2018/10/26/celery-execution-pool/">https://www.distributedpython.com/2018/10/26/celery-execution-pool/</a></p>
-<p><a href="https://www.distributedpython.com/2018/11/15/celery-docker/">https://www.distributedpython.com/2018/11/15/celery-docker/</a></p>
-<p><a href="https://www.distributedpython.com/">https://www.distributedpython.com/</a></p>
-<p><a href="https://github.com/czue/celery-progress">https://github.com/czue/celery-progress</a></p>
-<p><a href="https://www.vinta.com.br/blog/2017/celery-overview-archtecture-and-how-it-works/">https://www.vinta.com.br/blog/2017/celery-overview-archtecture-and-how-it-works/</a></p>
-<p><a href="https://www.caktusgroup.com/blog/2021/08/11/using-celery-scheduling-tasks/">https://www.caktusgroup.com/blog/2021/08/11/using-celery-scheduling-tasks/</a></p>
-<p><a href="https://www.caktusgroup.com/blog/2014/09/29/celery-production/">https://www.caktusgroup.com/blog/2014/09/29/celery-production/</a></p>
-<p><a href="https://pypi.org/project/flower/">https://pypi.org/project/flower/</a></p>
-<p><a href="https://github.com/celery/django-celery-beat/issues/95">https://github.com/celery/django-celery-beat/issues/95</a></p>
-<p><a href="https://pypi.org/project/django-celery-beat/">https://pypi.org/project/django-celery-beat/</a></p>
-<p><a href="https://www.distributedpython.com/">https://www.distributedpython.com/</a></p>
-<p><a href="https://realpython.com/asynchronous-tasks-with-django-and-celery/#:~:text=Celery%20workers%20are%20worker%20processes,schedule%20periodic%20tasks%20as%20well">https://realpython.com/asynchronous-tasks-with-django-and-celery/#:~:text=Celery%20workers%20are%20worker%20processes,schedule%20periodic%20tasks%20as%20well</a>.</p>
-<p><a href="https://pypi.org/project/django-celery-model/">https://pypi.org/project/django-celery-model/</a></p>
-<p><a href="https://github.com/celery/django-celery-beat/issues/95">https://github.com/celery/django-celery-beat/issues/95</a>
-<a href="https://stackoverflow.com/questions/10194975/how-to-dynamically-add-remove-periodic-tasks-to-celery-celerybeat">https://stackoverflow.com/questions/10194975/how-to-dynamically-add-remove-periodic-tasks-to-celery-celerybeat</a></p>
-<p>celery -A app_name beat -l INFO
-CELERY_BEAT_SCHEDULE = {
-&ldquo;scheduled_task&rdquo;: {
-&ldquo;task&rdquo;: &ldquo;performance_review.tasks.scheduled.scheduled_task.scheduled_task&rdquo;,
-&ldquo;schedule&rdquo;: 5.0,  <br>
-&ldquo;args&rdquo;: (),<br>
-},
-}
-python manage.py migrate
-INSTALLED_APPS = (
-&hellip;,
-&lsquo;django_celery_beat&rsquo;,
-)
-celery -A app_name worker -l info &ndash;pool=solo
-from celery import Celery</p>
-<p>app_name = Celery(&rsquo;<!-- raw HTML omitted -->&rsquo;, broker=&lt;&lsquo;specify message broker url&rsquo;&gt;)
-celery_app.autodiscover_tasks()
-python manage.py migrate
-INSTALLED_APPS = (
-&hellip;,
-&lsquo;celery&rsquo;,
-&lsquo;django_celery_results&rsquo;
-)
-pip install celery</p>
+</li>
+</ul>
+<h3 id="integrating-celery-with-django-and-rabbitmq">Integrating Celery with Django and RabbitMQ:<a hidden class="anchor" aria-hidden="true" href="#integrating-celery-with-django-and-rabbitmq">#</a></h3>
+<ul>
+<li>Install celery</li>
+<li>Add the celery and django_celery_results module to INSTALLED_APPS in your Django project’ settings.py</li>
+<li>Apply Django database migrations so that the necessary tables are created</li>
+<li>Install RabbitMQ message broker (Alternatively Redis can be used):https://www.rabbitmq.com/download.html</li>
+<li>Then create an instance of Celery</li>
+<li>Create a task with @shared_task decorator</li>
+<li>Tasks created with shared_task  decorator is auto detected by celery</li>
+<li>Starting the Celery worker service:</li>
+<li>&ndash;pool option used to control the number of concurrencies <a href="https://www.distributedpython.com/2018/10/26/celery-execution-pool/">https://www.distributedpython.com/2018/10/26/celery-execution-pool/</a></li>
+</ul>
+<p>** This article will be updated **</p>
 
 
   </div>

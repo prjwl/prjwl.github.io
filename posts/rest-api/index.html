@@ -122,78 +122,27 @@
     <div class="post-description">
       API design
     </div>
-    <div class="post-meta"><span title='2022-10-23 03:55:20 +0530 IST'>October 23, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Prajwal S
+    <div class="post-meta"><span title='2022-10-23 03:55:20 +0530 IST'>October 23, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Prajwal S
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
-  <div class="post-content"><p>What is a REST API?
-A REST API (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for representational state transfer and was created by computer scientist Roy Fielding.</p>
-<p>A Restful system consists of a:</p>
-<p>A client who requests the resources.
-The server that has the resources
-Architectural Constraints of RESTful API: There are six architectural constraints that make any web service are listed below:</p>
-<p>Uniform Interface
-Stateless
-Cacheable
-Client-Server
-Layered System
-Code on Demand.
-Resources:</p>
-<p><a href="https://www.redhat.com/en/topics/api/what-is-a-rest-api">https://www.redhat.com/en/topics/api/what-is-a-rest-api</a></p>
-<p><a href="https://www.geeksforgeeks.org/rest-api-architectural-constraints/">https://www.geeksforgeeks.org/rest-api-architectural-constraints/</a></p>
-<p>Best practices for REST API design?
-Rest API must accept and respond with JSON: REST APIs should accept JSON for request payload and also send responses to JSON. JSON is the standard for transferring data. Almost every networked technology can use it: JavaScript has built-in methods to encode and decode JSON either through the Fetch API or another HTTP client. Server-side technologies have libraries that can decode JSON without doing much work.
-Use nouns instead of verbs in endpoint paths: We shouldn’t use verbs in our endpoint paths. Instead, we should use the nouns which represent the entity that the endpoint that we’re retrieving or manipulating as the pathname.
-Name collections with plural nouns: When you have to develop the collection in REST API, just go with plural nouns. It makes it easier to understand the meaning of the collection without actually opening it. Example: GET /cars/123
-Nesting resources for hierarchical objects: When designing endpoints, it makes sense to group those that contain associated information. That is, if one object can contain another object, you should design the endpoint to reflect that. This is good practice regardless of whether your data is structured like this in your database. Example: GET /employees/1/leave
-Handle errors gracefully and return standard error codes: To eliminate confusion for API users when an error occurs, we should handle errors gracefully and return HTTP response codes that indicate what kind of error occurred. This gives maintainers of the API enough information to understand the problem that’s occurred. We don’t want errors to bring down our system, so we can leave them unhandled, which means that the API consumer has to handle them.
-Allow filtering, sorting, and pagination: The databases behind a REST API can get very large. Sometimes, there’s so much data that it shouldn’t be returned all at once because it’s way too slow or will bring down our systems. Therefore, we need ways to filter items.
-Maintain good security practices:
-Using SSL/TLS for security is a must.
-People shouldn’t be able to access more information than they requested.
-If we choose to group users into a few roles, then the roles should have the permissions that cover all they need and no more.
-Cache data to improve performance: We can add caching to return data from the local memory cache instead of querying the database to get the data every time we want to retrieve some data that users request.
-Versioning our APIs: We should have different versions of API if we’re making any changes to them that may break clients.
-API documentation: When you make a REST API, you need to help clients (consumers) learn and figure out how to use it correctly. The best way to do this is by providing good documentation for the API.
-The documentation should contain:
-relevant endpoints of the API
-example requests of the endpoints
-implementation in several programming languages
-messages listed for different errors with their status codes
-<a href="https://swagger.io/">https://swagger.io/</a>
-Example:</p>
-<p>Resource</p>
-<p>POST</p>
-<p>GET</p>
-<p>PUT</p>
-<p>DELETE</p>
-<p>/employees</p>
-<p>Create a new employee(s)</p>
-<p>Retrieve all employees</p>
-<p>Bulk update of employees</p>
-<p>Remove all employees</p>
-<p>/employees/1</p>
-<p>Error</p>
-<p>Retrieve the details for employee 1</p>
-<p>Update the details of employee 1 if it exists</p>
-<p>Remove employee 1</p>
-<p>/employees/1/leave</p>
-<p>Create a new leave request for employee 1</p>
-<p>Retrieve all leaves for employee 1</p>
-<p>Bulk update of leaves for employee 1</p>
-<p>Remove all leaves for employee 1</p>
-<p>Resources:</p>
-<p><a href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design">https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design</a></p>
-<p><a href="https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/">https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/</a></p>
-<p><a href="https://stackoverflow.blog/2021/10/06/best-practices-for-authentication-and-authorization-for-rest-apis/">https://stackoverflow.blog/2021/10/06/best-practices-for-authentication-and-authorization-for-rest-apis/</a></p>
-<p><a href="https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/">https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/</a></p>
-<p><a href="https://swagger.io/resources/articles/best-practices-in-api-design/">https://swagger.io/resources/articles/best-practices-in-api-design/</a></p>
-<p><a href="https://www.redhat.com/en/topics/api/what-is-a-rest-api">https://www.redhat.com/en/topics/api/what-is-a-rest-api</a></p>
-<p><a href="https://restfulapi.net/">https://restfulapi.net/</a></p>
-<p><a href="https://www.partech.nl/nl/publicaties/2020/07/9-trending-best-practices-for-rest-api-development#">https://www.partech.nl/nl/publicaties/2020/07/9-trending-best-practices-for-rest-api-development#</a></p>
-<p>REST API Design: Filter, Sort, and pagination
-<a href="https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/">https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/</a></p>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-a-rest-api" aria-label="What is a REST API?">What is a REST API?</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h3 id="what-is-a-rest-api">What is a REST API?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-rest-api">#</a></h3>
+<p>A REST API (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for representational state transfer and was created by computer scientist Roy Fielding.</p>
+<p>** This article is getting updated **</p>
 
 
   </div>
