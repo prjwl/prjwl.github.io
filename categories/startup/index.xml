@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Startup on Prajwal S</title>
-    <link>https://prajwals.in/categories/startup/</link>
-    <description>Recent content in Startup on Prajwal S</description>
+    <title>Startup on The space</title>
+    <link>http://localhost:1313/categories/startup/</link>
+    <description>Recent content in Startup on The space</description>
     <generator>Hugo -- 0.128.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 05 May 2023 03:55:20 +0530</lastBuildDate>
-    <atom:link href="https://prajwals.in/categories/startup/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/startup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zero to One</title>
-      <link>https://prajwals.in/posts/zero-to-one/</link>
+      <link>http://localhost:1313/posts/zero-to-one/</link>
       <pubDate>Fri, 05 May 2023 03:55:20 +0530</pubDate>
-      <guid>https://prajwals.in/posts/zero-to-one/</guid>
+      <guid>http://localhost:1313/posts/zero-to-one/</guid>
       <description>Book summary</description>
     </item>
   </channel>
